@@ -13,7 +13,13 @@ import java.util.logging.Logger;
 import java.util.Random;
 
 public class MainFrame extends javax.swing.JFrame {
-// new semaphore that controls access to out_count
+  // INITIALIZATION //
+
+public static int resources = 1000;
+public static int read_count = 0;   
+
+public static Semaphore rw_mutex = new Semaphore(1);
+public static Semaphore read_mutex = new Semaphore(1);
     public MainFrame() {
         initComponents();
 
